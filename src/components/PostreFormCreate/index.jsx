@@ -48,7 +48,7 @@ const PostreFormCreate = () => {
                   * @return {Promise} Promesa que se resuelve con un mensaje de éxito o error.
                   */
 
-                  const response = await fetch(`${VITE_BACKEND_URL}API/v1/upload`, {
+                  const response = await fetch(`${VITE_BACKEND_URL}API/v1/postres/crear`, {
                     method: 'POST',
                     body: formData 
                   });
