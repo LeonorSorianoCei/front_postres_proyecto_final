@@ -58,7 +58,7 @@ function LoginForm() {
        */
 
       const data = await easyFetch({
-        url: `${VITE_BACKEND_URL}/login/user`,
+        url: `${VITE_BACKEND_URL}API/v1/login/user`,
         method: 'POST',
         body: { nombre: usuario, clave: clave },
         callback: (data) => {
