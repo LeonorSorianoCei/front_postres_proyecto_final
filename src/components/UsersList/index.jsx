@@ -74,7 +74,7 @@ function UsersList() {
 
       const response = await easyFetch({
         method: 'DELETE',
-        url: `${VITE_BACKEND_URL}/usuarios/${userId}`,
+        url: `${VITE_BACKEND_URL}API/v1/usuarios/${userId}`,
       });
       fetchUsers(); 
 
@@ -107,7 +107,7 @@ function UsersList() {
 
       await easyFetch({
         method: 'PATCH',
-        url: `${VITE_BACKEND_URL}/usuarios/${userId}`,
+        url: `${VITE_BACKEND_URL}API/v1/usuarios/${userId}`,
         body: { deleted_at: null }, 
       });
       fetchUsers(); 
@@ -138,7 +138,7 @@ function UsersList() {
       
       await easyFetch({
         method: 'DELETE',
-        url: `${VITE_BACKEND_URL}/usuarios/${userId}/forever`, 
+        url: `${VITE_BACKEND_URL}API/v1/usuarios/${userId}/forever`, 
       });
       fetchUsers(); 
     } catch (error) {

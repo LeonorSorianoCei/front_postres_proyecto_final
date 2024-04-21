@@ -80,7 +80,7 @@ function PostresList() {
      */
       await easyFetch({
         method: 'DELETE',
-        url: `${VITE_BACKEND_URL}/postres/${postreId}`,
+        url: `${VITE_BACKEND_URL}API/v1/postres/${postreId}`,
       });
       fetchPostres();
 
@@ -102,7 +102,7 @@ function PostresList() {
     try {
       await easyFetch({
         method: 'PATCH', 
-        url: `${VITE_BACKEND_URL}/postres/${postreId}`,
+        url: `${VITE_BACKEND_URL}API/v1/postres/${postreId}`,
         body: { deleted_at: null }, 
       });
       fetchPostres();
@@ -134,7 +134,7 @@ function PostresList() {
      
       await easyFetch({
         method: 'DELETE',
-        url: `${VITE_BACKEND_URL}/postres/${postreId}/forever`, 
+        url: `${VITE_BACKEND_URL}API/v1/postres/${postreId}/forever`, 
       });
       fetchPostres();
 
