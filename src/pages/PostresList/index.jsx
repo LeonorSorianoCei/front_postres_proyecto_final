@@ -49,7 +49,7 @@ function PostresList() {
 
   const fetchPostres = () => {
     easyFetch({
-      url: `${VITE_BACKEND_URL}/postres`,
+      url: `${VITE_BACKEND_URL}API/v1/postres`,
       callback: (jsonData) => {
         const postresUsuario = jsonData.data.filter(postre => postre._idUser === datosUsuario._id);
         setPostresList(postresUsuario);
