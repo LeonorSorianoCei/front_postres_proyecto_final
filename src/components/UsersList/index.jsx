@@ -42,7 +42,7 @@ function UsersList() {
 
   const fetchUsers = () => {
     easyFetch({
-      url: `${VITE_BACKEND_URL}/usuarios`,
+      url: `${VITE_BACKEND_URL}API/v1/usuarios`,
       callback: (jsonData) => {
         setUsers(jsonData.data);
       }

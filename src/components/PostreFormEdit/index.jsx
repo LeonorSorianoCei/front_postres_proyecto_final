@@ -52,7 +52,7 @@ const PostreFormEdit = ({ postreId }) => {
        * @return {Promise} Promesa que se resuelve con un mensaje de éxito o error.
        */
   
-      fetch(`${VITE_BACKEND_URL}/postres/${postreId}`, {
+      fetch(`${VITE_BACKEND_URL}API/v1/postres/${postreId}`, {
         method: 'PUT',
         headers: {
         'Content-Type': 'application/json'

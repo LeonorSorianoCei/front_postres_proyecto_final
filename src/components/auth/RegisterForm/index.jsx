@@ -40,7 +40,7 @@ const RegisterForm = () => {
      * @return {Promise} Promesa que se resuelve con un mensaje de éxito o error.
      */
 
-    fetch(`${VITE_BACKEND_URL}/create/user`, {
+    fetch(`${VITE_BACKEND_URL}API/v1/create/user`, {
       method: 'POST',
       body: formData
     })
