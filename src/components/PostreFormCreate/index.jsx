@@ -70,16 +70,7 @@ const PostreFormCreate = () => {
       * Función que maneja el tipo de archivo en el input de tipo "file".
       * @param {Event} e Objeto de evento que representa el cambio de archivo.
       */
-      const handleFileChange = (e) => {
-            const file = e.target.files[0];
-            if (file) {
-                  const fileType = file.type.split('/')[0];
-                  if (fileType !== 'image') {
-                    alert('Por favor, selecciona un archivo de imagen.');
-                    e.target.value = null;
-                  }
-            }
-      };
+    
 
 
       if (!isLogged) {
@@ -98,15 +89,7 @@ const PostreFormCreate = () => {
           required 
         /><br />
 
-        <label className="file-label">Selecciona una imagen</label><br />
-        <div className="file-input">
-            <input 
-              type="file" 
-              name="imagen_subida" 
-              required  
-              onChange={handleFileChange}  
-            /><br />
-        </div>
+      
 
         <label>Descripción</label>
         <textarea
