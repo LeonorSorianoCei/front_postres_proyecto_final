@@ -38,7 +38,7 @@ function Home() {
               }
   
               { isLogged  &&
-                <img className='imagen-usuario' src={datosUsuario.imagen ? `${VITE_BACKEND_URL_IMG}${datosUsuario.imagen}` : `${VITE_BACKEND_URL_IMG}sin_imagen_de_postre.jpg`} alt={datosUsuario.nombre}  />      
+                <img className='imagen-usuario' src={datosUsuario.imagen ? `${VITE_BACKEND_URL_IMG}${datosUsuario.imagen}` : `${VITE_BACKEND_URL_IMG}logo_mundo_de_azucar.png`} alt={datosUsuario.nombre}  />      
 
                  }
             </div>
