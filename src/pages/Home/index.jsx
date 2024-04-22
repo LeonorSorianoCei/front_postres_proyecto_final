@@ -5,7 +5,7 @@ import { AdminContext } from '@/pages/Context/AdminContext';
 import { UsuarioContext } from '@/pages/Context/UsuarioContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBirthdayCake } from '@fortawesome/free-solid-svg-icons'; 
-import { VITE_BACKEND_URL } from '@/consts/consts';
+import { VITE_BACKEND_URL_IMG } from '@/consts/consts';
 import './home-styles.css'; 
 
 /**
@@ -38,7 +38,7 @@ function Home() {
               }
   
               { isLogged  &&
-                <img className='imagen-usuario' src={`${VITE_BACKEND_URL}/${datosUsuario.imagen}`} alt={datosUsuario.nombre} />
+                <img className='imagen-usuario' src={`${VITE_BACKEND_URL_IMG}/${datosUsuario.imagen}`} alt={datosUsuario.nombre} />
                 //<img className='imagen-usuario' src={`${VITE_BACKEND_URL}API/v1/files/${datosUsuario.imagen}`} alt={datosUsuario.nombre} />
                 //<img className='imagen-usuario' src={`${VITE_BACKEND_URL}/logo_mundo_de_azucar.png`} alt={datosUsuario.nombre} /> 
                 }
