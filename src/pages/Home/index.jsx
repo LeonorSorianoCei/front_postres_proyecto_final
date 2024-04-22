@@ -38,7 +38,7 @@ function Home() {
               }
   
               { isLogged  &&
-                <img className='imagen-usuario' src={`${VITE_BACKEND_URL_IMG}${datosUsuario.imagen}`} alt={datosUsuario.nombre} />
+              <img className='imagen-usuario' src={imagen ? `${VITE_BACKEND_URL_IMG}${datosUsuario.imagen}` : `${VITE_BACKEND_URL_IMG}sin_imagen_de_postre.jpg`} alt={datosUsuario.nombre}  />      
               }
             </div>
           </section>
