@@ -7,4 +7,4 @@
  */
 export const { VITE_BACKEND_URL } = import.meta.env;
 
-
+export const {VITE_BACKEND_URL_IMG} = import.meta.env;
