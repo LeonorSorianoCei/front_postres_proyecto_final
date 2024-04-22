@@ -110,14 +110,7 @@ const RegisterForm = () => {
           autoComplete="current-password"
         /><br />
 
-        <label>Añade una imagen que te represente</label><br />
-        <input className='file-input-style '
-         type="file" 
-         name="imagen_usuario"
-         required 
-         onChange={handleFileChange}
-        /><br />
-          
+        
         <label>Descripción</label>
         <textarea
           className="input-control"
