@@ -1,6 +1,7 @@
 import React from "react";
 import PostreAccordion from "@/components/PostreAccordion";
 import { VITE_BACKEND_URL } from '@/consts/consts';
+import { VITE_BACKEND_URL_IMG } from '@/consts/consts';
 import "./postre-lightbox-styles.css";
 
 /**
@@ -35,7 +36,7 @@ const PostreLightbox = ({ isOpen, onClose, postre, children }) => {
               X
             </button>
             <h2>{nombre}</h2>
-            <img src={`${VITE_BACKEND_URL}/files/${imagen}`} alt={nombre} className="lightbox-image" />
+            <img src={imagen ? `${VITE_BACKEND_URL_IMG}${imagen}` : `${VITE_BACKEND_URL_IMG}logo_mundo_de_azucar.png`} alt={nombre} className="lightbox-image" />      
             <div>
               <PostreAccordion {...postre} >
                 {children}

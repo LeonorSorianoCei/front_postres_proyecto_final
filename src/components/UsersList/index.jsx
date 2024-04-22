@@ -5,6 +5,7 @@ import { faTrash, faUndo } from '@fortawesome/free-solid-svg-icons';
 import { UsuarioContext } from '@/pages/Context/UsuarioContext';
 import { AuthContext } from '@/pages/Context/AuthContext';
 import { VITE_BACKEND_URL } from '@/consts/consts';
+import { VITE_BACKEND_URL_IMG } from '@/consts/consts';
 import './users-list-styles.css';
 
 /**
@@ -188,8 +189,8 @@ function UsersList() {
                 {activeUsers.map(({ _id, nombre, imagen, descripcion }) => (
                   <div className="card-user" key={_id}>
                     <h3>{nombre}</h3>
-                    <img src={`${VITE_BACKEND_URL}API/v1/files/${imagen}`} alt={nombre} />
-                    <section className='texto'>
+                    <img src={imagen ? `${VITE_BACKEND_URL_IMG}${imagen}` : `${VITE_BACKEND_URL_IMG}logo_mundo_de_azucar.png`} alt={nombre} />
+                     <section className='texto'>
                       <p>{descripcion}</p>
                     </section>
                     <button className="delete-button" onClick={(e) => { e.stopPropagation(); handleDeleteUser(_id); }}>
