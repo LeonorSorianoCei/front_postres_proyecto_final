@@ -29,15 +29,11 @@ const PostreFormCreate = () => {
             e.preventDefault();
             const formData = new FormData(e.target);
             formData.append('userId', datosUsuario._id);
-
-             // Convertir FormData a cadena form-urlencoded
-              let urlEncodedData = '';
-              for (const [key, value] of formData.entries()) {
-                if (urlEncodedData !== '') {
-                  urlEncodedData += '&';
-                }
-                urlEncodedData += encodeURIComponent(key) + '=' + encodeURIComponent(value);
-              }
+            
+            const requestData = {};
+            formData.forEach((value, key) => {
+            requestData[key] = value;
+            });
 
             try {
                   /**
@@ -60,9 +56,9 @@ const PostreFormCreate = () => {
                   const response = await fetch(`${VITE_BACKEND_URL}API/v1/postres/crear`, {
                     method: 'POST',
                     headers: {
-                      'Content-Type': 'application/x-www-form-urlencoded',
-                    },
-                    body: urlEncodedData,
+                      'Content-Type': 'application/json'
+                      },
+                      body: JSON.stringify(requestData)
                   });
                 
                   if (!response.ok) {
