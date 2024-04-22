@@ -26,6 +26,11 @@ const RegisterForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
+
+    const requestData = {};
+            formData.forEach((value, key) => {
+            requestData[key] = value;
+            });
     
     /**
      * FETCH
@@ -42,7 +47,11 @@ const RegisterForm = () => {
 
     fetch(`${VITE_BACKEND_URL}API/v1/create/user`, {
       method: 'POST',
-      body: formData
+      headers: {
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestData)
+    
     })
 
     .then(response => response.json())
