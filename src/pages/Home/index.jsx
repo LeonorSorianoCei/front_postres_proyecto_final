@@ -38,8 +38,9 @@ function Home() {
               }
   
               { isLogged  &&
+                <img className='imagen-usuario' src={`${VITE_BACKEND_URL}/${datosUsuario.imagen}`} alt={datosUsuario.nombre} />
                 //<img className='imagen-usuario' src={`${VITE_BACKEND_URL}API/v1/files/${datosUsuario.imagen}`} alt={datosUsuario.nombre} />
-                <img className='imagen-usuario' src={`${VITE_BACKEND_URL}/logo_mundo_de_azucar.png`} alt={datosUsuario.nombre} /> 
+                //<img className='imagen-usuario' src={`${VITE_BACKEND_URL}/logo_mundo_de_azucar.png`} alt={datosUsuario.nombre} /> 
                 }
             </div>
           </section>
