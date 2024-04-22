@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faUndo } from '@fortawesome/free-solid-svg-icons'; 
 import { easyFetch } from '@/helpers/utils';
 import { VITE_BACKEND_URL } from '@/consts/consts';
+import { VITE_BACKEND_URL_IMG } from '@/consts/consts';
 import { PostreContext } from '@/pages/Context/PostreContext';
 import { UsuarioContext } from '@/pages/Context/UsuarioContext';
 import { AuthContext } from '@/pages/Context/AuthContext';
@@ -199,8 +200,8 @@ function PostresList() {
                   {filteredPostres.map(({ _id, nombre, imagen, descripcion, ingredientes, dificultad, tiempo, instrucciones }) => (
                     <div className="card-item" key={_id} onClick={() => handlePostreClick({ _id, nombre, imagen, descripcion, ingredientes, dificultad, tiempo, instrucciones })}>
                       <h3>{nombre}</h3>
-                      <img src={`${VITE_BACKEND_URL}API/v1/files/${imagen}`} alt={nombre} />
-                      <section className='texto'>
+                      <img src={imagen ? `${VITE_BACKEND_URL_IMG}${imagen}` : `${VITE_BACKEND_URL_IMG}logo_mundo_de_azucar.png`} alt={nombre} />
+                        <section className='texto'>
                       <p>Dificultad: {dificultad}</p>
                         <p>{descripcion}</p>
                         <p>Ingredientes: {ingredientes}</p>
