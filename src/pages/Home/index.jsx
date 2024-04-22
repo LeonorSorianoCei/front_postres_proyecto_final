@@ -37,14 +37,10 @@ function Home() {
                 <p className='nombre-usuario'>¡Hola {datosUsuario.nombre}!</p>
               }
   
-              { isLogged && (
-                datosUsuario.imagen ? (
-                   <img className='imagen-usuario' src={`${VITE_BACKEND_URL}API/v1/files/${datosUsuario.imagen}`} alt={datosUsuario.nombre} />
-                ) : (
-                   <img className='imagen-usuario' src={'public/logo_mundo_de_azucar.png'} alt='Imagen por defecto' />
-                 )
-              )}
-
+              { isLogged  &&
+                //<img className='imagen-usuario' src={`${VITE_BACKEND_URL}API/v1/files/${datosUsuario.imagen}`} alt={datosUsuario.nombre} />
+                <img className='imagen-usuario' src={'public/logo_mundo_de_azucar.png'} alt='Imagen por defecto' />
+              }
             </div>
           </section>
               
