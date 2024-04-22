@@ -30,6 +30,15 @@ const PostreFormCreate = () => {
             const formData = new FormData(e.target);
             formData.append('userId', datosUsuario._id);
 
+             // Convertir FormData a cadena form-urlencoded
+              let urlEncodedData = '';
+              for (const [key, value] of formData.entries()) {
+                if (urlEncodedData !== '') {
+                  urlEncodedData += '&';
+                }
+                urlEncodedData += encodeURIComponent(key) + '=' + encodeURIComponent(value);
+              }
+
             try {
                   /**
                   * FETCH
@@ -53,7 +62,7 @@ const PostreFormCreate = () => {
                     headers: {
                       'Content-Type': 'application/x-www-form-urlencoded',
                     },
-                    body: formData 
+                    body: urlEncodedData,
                   });
                 
                   if (!response.ok) {
