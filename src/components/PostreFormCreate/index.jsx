@@ -50,6 +50,9 @@ const PostreFormCreate = () => {
 
                   const response = await fetch(`${VITE_BACKEND_URL}API/v1/postres/crear`, {
                     method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/x-www-form-urlencoded',
+                    },
                     body: formData 
                   });
                 
